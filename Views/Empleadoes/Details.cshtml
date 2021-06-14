@@ -1,0 +1,91 @@
+﻿@model WebForm.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <div class="mt-3">
+        @Html.ActionLink("Volver al Inicio", "Index", "Empleadoes", new { area = "" }, new { @class = "btn btn-outline-info" })
+        |
+        @Html.ActionLink("Editar Registro", "Edit", "Empleadoes", new { id = Model.Id }, new { @class = "btn btn-outline-info" })
+    </div>
+    <hr />
+    <div class="card">
+        <div class="card-header text-center">
+            Detalles del Empleado
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        Nombre
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.Nombre)" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        Apellido
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.Apellido)" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        Cedula
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.Cedula)" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        Tanda
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.Tanda)" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        Comision
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.Comision)" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        Fecha de Ingreso
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.FechaIngreso)" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        Estado
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.Estado)" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        Contraseña
+                        <div>
+                            <input class="form-control" type="text" placeholder="@Html.DisplayFor(model => model.Contrasena)" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<WebForm.Models.Empleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4">Desarrollo con Tecnologia Propietaria 2</h1>
+    <p class="lead">Oliver Arias - 20200813</p>
+    <hr class="my-4">
+    <a class="btn btn-outline-secondary btn-lg" href="#" role="button">Conocer mas</a>
+</div>
+
+@Html.ActionLink("Crear nuevo", "Create", "Empleadoes", new { area = "" }, new { @class = "btn btn-outline-primary" })
+<br />
+<br />
+
+<table class="table table-bordered table-hover text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tanda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comision)
+        </th>
+        <th>
+            @Html.DisplayName("Fecha de Ingreso")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayName("Contraseña")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tanda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contrasena)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit","Empleadoes", new { id = item.Id })"><i class="fas fa-user-edit fa-2x text-warning mr-2"></i></a>
+                <a href="@Url.Action("Details","Empleadoes", new { id = item.Id })"><i class="fas fa-info-circle fa-2x text-info mr-2"></i></a>
+                <a href="@Url.Action("Delete","Empleadoes", new { id = item.Id })"><i class="fas fa-trash fa-2x text-danger"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
